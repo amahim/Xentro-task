@@ -1,8 +1,34 @@
-# React + Vite
+# Product Management Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple web application to manage products via admin dashboard, where admins can view, search, and delete products. This app uses React for the frontend, Axios for API requests, and Tailwind CSS for styling.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **View All Users:** Displays a list of users with their details.
+- **Search Products:** Search for products by name.
+- **Delete Products:** Admin can delete products.
+- **Responsive Layout:** The app is fully responsive and works well on mobile, tablet, and desktop.
+
+## Tech Stack
+
+- **Frontend:** React.js
+- **Styling:** Tailwind CSS
+- **API Requests:** Axios
+- **Toast Notifications:** React Hot Toast
+
+## Live Demo
+
+You can try out the live version of the app here:
+
+[Product Management Dashboard Live Demo](https://xentrotask.netlify.app)
+
+## Getting Started
+
+Follow these steps to run the app locally:
+
+### 1. Clone the Repository
+### 1. Open the terminal and run "npm i"
+### 1. You can use user's email from this api (https://jsonplaceholder.typicode.com/users) such as(Sincere@april.biz) for login as any other mail wont work!
+### 1. Basically I've implemented all the given instruction but add and delete product won't work as the api's doesn't access POST,DELETE requests!Yet I've implemented them in project code.
+
+##Thank You
