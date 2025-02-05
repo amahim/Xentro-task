@@ -8,15 +8,18 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const [users] = useUsers()
-  const {loggedIn,setLoggedIn} = useAuth()
+  const [users] = useUsers();
+  const { loggedIn, setLoggedIn } = useAuth();
+
   const handleLogin = async () => {
     try {
-      const user = users.find((u) => u.email === email);
+      // Normalize the email to lowercase for case-insensitive comparison
+      const normalizedEmail = email.toLowerCase();
+      const user = users.find((u) => u.email.toLowerCase() === normalizedEmail);
 
       if (user) {
-        toast.success("Login Successful!")
-        setLoggedIn(true)
+        toast.success("Login Successful!");
+        setLoggedIn(true);
         navigate("/");
       } else {
         setError("Invalid email. Please try again.");
