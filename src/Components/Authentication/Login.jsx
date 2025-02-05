@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import toast from "react-hot-toast";
 import { useAuth } from "./AuthContext";
+import useUsers from "../Hooks/useUsers";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [users] = useUsers()
   const {loggedIn,setLoggedIn} = useAuth()
   const handleLogin = async () => {
     try {
-      const response = await axios.get("https://jsonplaceholder.typicode.com/users");
-      const users = response.data;
-
       const user = users.find((u) => u.email === email);
 
       if (user) {
@@ -30,7 +28,7 @@ const Login = () => {
 
   return (
     <div className="py-10">
-      <div className="border-2 border-black w-2/5 mx-auto">
+      <div className="border-2 border-black w-4/5 md:w-3/5 lg:w-2/5 mx-auto">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium text-center text-black mt-5">
           Let's login!
         </h1>
