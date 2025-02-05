@@ -6,7 +6,6 @@ const AllProducts = () => {
   const [products] = useProducts();
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Filter products based on search input
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
