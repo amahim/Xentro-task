@@ -1,32 +1,48 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./Components/Homepage/Home";
+import Login from "./Components/Authentication/Login";
+import { Toaster } from "react-hot-toast";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import HomeLayout from "./Components/Homepage/HomeLayout";
+import { AuthProvider } from "./Components/Authentication/AuthContext";
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import Home from './Components/Homepage/Home';
-import Login from './Components/Authentication/Login';
-import { Toaster } from 'react-hot-toast';
+const queryClient = new QueryClient();
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home/>,
-    errorElement: <h1>Error!!!</h1>,
-    children:[
-      {
-        path:"login",
-        element:<Login/>
-      }
-    ]
-  },
-]);
+const Main = () => {
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <Toaster/>
-    <RouterProvider router={router} />
-  </StrictMode>,
-)
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+      errorElement: <h1>Error!!!</h1>,
+      children: [
+        {
+          path: "/",
+          element: <HomeLayout />, 
+        },
+        {
+          path: "login",
+          element: <Login />,
+        },
+      ],
+    },
+  ]);
+
+  return (
+    <StrictMode>
+       <AuthProvider>
+        <QueryClientProvider client={queryClient}>
+        <Toaster />
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+       </AuthProvider>
+      
+    </StrictMode>
+  );
+};
+
+createRoot(document.getElementById("root")).render(<Main />);

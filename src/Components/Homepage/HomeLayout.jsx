@@ -1,13 +1,14 @@
 
 import Navbar from './Navbar';
+import Products from './Products/Products';
 
 
-const HomeLayout = ({ loggedIn, setLoggedIn }) => {
+const HomeLayout = () => {
     
     return (
         <div>
-            <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
-            
+            <Navbar />
+            <Products />
         </div>
     );
 };

@@ -1,20 +1,19 @@
 import React, { useState } from "react";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
 import toast from "react-hot-toast";
+import { useAuth } from "./AuthContext";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { setLoggedIn } = useOutletContext();
+  const {loggedIn,setLoggedIn} = useAuth()
   const handleLogin = async () => {
     try {
       const response = await axios.get("https://jsonplaceholder.typicode.com/users");
       const users = response.data;
 
-      // Check if the entered email exists
       const user = users.find((u) => u.email === email);
 
       if (user) {
