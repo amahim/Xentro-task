@@ -13,7 +13,7 @@ import { Toaster } from 'react-hot-toast';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home></Home>,
+    element: <Home/>,
     errorElement: <h1>Error!!!</h1>,
     children:[
       {

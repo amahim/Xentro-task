@@ -8,8 +8,7 @@ const Home = () => {
     return (
         <div className='w-4/5 mx-auto py-5'>
             <HomeLayout  loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
-            <Outlet/>
-            {/* <Outlet context={{ loggedIn, setLoggedIn }} /> */}
+            <Outlet context={{ loggedIn, setLoggedIn }} />
         </div>
     );
 };
