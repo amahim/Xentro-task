@@ -27,8 +27,8 @@ You can try out the live version of the app here:
 Follow these steps to run the app locally:
 
 ### 1. Clone the Repository
-### 1. Open the terminal and run "npm i"
-### 1. You can use user's email from this api (https://jsonplaceholder.typicode.com/users) such as(Sincere@april.biz) for login as any other mail wont work!
-### 1. Basically I've implemented all the given instruction but add and delete product won't work as the api's doesn't access POST,DELETE requests!Yet I've implemented them in project code.
+### 2. Open the terminal and run "npm i"
+### 3. You can use user's email from this api (https://jsonplaceholder.typicode.com/users) such as(Sincere@april.biz) for login as any other mail wont work!
+### 4. Basically I've implemented all the given instruction but add and delete product won't work as the api's doesn't access POST,DELETE requests!Yet I've implemented them in project code.
 
-##Thank You
+## Thank You
