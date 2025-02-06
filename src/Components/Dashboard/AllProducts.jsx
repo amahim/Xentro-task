@@ -50,10 +50,10 @@ const AllProducts = () => {
       </h1>
 
       {/* Search Input and Add Product Button */}
-      <div className="flex items-center mt-5 w-full">
+      <div className="flex flex-col gap-4 md:flex-row items-center mt-5 w-full">
         <input
           type="text"
-          className="border  flex-grow p-2 rounded"
+          className="border  md:flex-grow p-2 rounded"
           placeholder="Search product by name"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
