@@ -12,7 +12,6 @@ import Dashboard from "./Components/Dashboard/Dashboard";
 import PrivateRoute from "./Components/Routes/PrivateRoute";
 import AllUsers from "./Components/Dashboard/AllUsers";
 import AllProducts from "./Components/Dashboard/AllProducts";
-import AddProduct from "./Components/Dashboard/AddProduct";
 
 const queryClient = new QueryClient();
 
@@ -58,12 +57,7 @@ const Main = () => {
             <AllProducts />
           </PrivateRoute>,
         },
-        {
-            path: "add-product",
-            element: <PrivateRoute>
-            <AddProduct />
-          </PrivateRoute>,
-        },
+        
       ]
     }
   ]);

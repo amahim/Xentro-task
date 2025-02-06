@@ -54,17 +54,7 @@ const Sidebar = () => {
                   <FaProductHunt />
                   <p>All Products</p>
                 </NavLink>
-                <NavLink
-                  to="/dashboard/add-product"
-                  className={({ isActive }) =>
-                    `text-lg md:text-xl flex gap-2 items-center md:gap-3 ${
-                      isActive ? "bg-black py-2 px-2 text-white" : "text-black"
-                    }`
-                  }
-                >
-                  <FaCartPlus />
-                  <p>Add Product</p>
-                </NavLink>
+                
               </div>
             </div>
 
